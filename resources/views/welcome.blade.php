@@ -19,7 +19,7 @@
     <div id="app">
         <div id="wrapper">
             <!-- Sidebar -->
-            <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+            <ul v-if="['/','/register','/forget-password'].includes($route.path) ? false : true" class="navbar-nav sidebar sidebar-light accordion nav-status" id="accordionSidebar">
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                     <div class="sidebar-brand-icon">
                         <img src="{{asset('backend')}}/img/logo/logo2.png">
@@ -117,7 +117,7 @@
             <div id="content-wrapper" class="d-flex flex-column">
                 <div id="content">
                     <!-- TopBar -->
-                    <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+                    <nav v-if="['/','/register','/forget-password'].includes($route.path) ? false : true" class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top top-status">
                         <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
                             <i class="fa fa-bars"></i>
                         </button>
@@ -280,16 +280,15 @@
                                         Activity Log
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
+                                    <router-link class="dropdown-item" to="/logout">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Logout
-                                    </a>
+                                    </router-link>
                                 </div>
                             </li>
                         </ul>
                     </nav>
                     <!-- Topbar -->
-
                     <!-- Container Fluid-->
                     <div class="container-fluid" id="container-wrapper">
                         <router-view></router-view>
@@ -308,8 +307,9 @@
     {{-- <script src="{{asset('backend')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
     <script src="{{asset('backend')}}/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="{{asset('backend')}}/js/ruang-admin.js"></script>
-    {{-- <script src="{{asset('backend')}}/vendor/chart.js/Chart.min.js"></script>
-    <script src="{{asset('backend')}}/js/demo/chart-area-demo.js"></script> --}}
+    <script src="{{asset('backend')}}/vendor/chart.js/Chart.min.js"></script>
+    <script src="{{asset('backend')}}/js/demo/chart-area-demo.js"></script>
+
 </body>
 
 </html>

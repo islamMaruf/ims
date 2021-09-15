@@ -20,6 +20,9 @@
                         aria-describedby="emailHelp"
                         placeholder="Enter Email Address"
                       />
+                      <small v-if="errors.email" class="text-danger">
+                        {{ errors.email[0] }}
+                      </small>
                     </div>
                     <div class="form-group">
                       <input
@@ -29,6 +32,9 @@
                         v-model="form.password"
                         placeholder="Password"
                       />
+                      <small v-if="errors.password" class="text-danger">
+                        {{ errors.password[0] }}
+                      </small>
                     </div>
                     <div class="form-group">
                       <div
@@ -83,6 +89,7 @@ export default {
         email: "",
         password: "",
       },
+      errors: [],
     };
   },
   methods: {
@@ -91,13 +98,28 @@ export default {
         .post("/api/login", this.form)
         .then((response) => {
           User.responseAfterLogin(response.data);
+          Toast.fire({
+            icon: "success",
+            title: "Signed in successfully",
+          });
+          this.$router.push({ name: "home" });
         })
-        .catch((err) => console.log(err));
-      console.log("hitted");
+        .catch((err) => {
+          this.errors = err.response.data.errors;
+          //   Toast.fire({
+          //     icon: "warning",
+          //     title: "Email or Password mismatch",
+          //   });
+        });
     },
   },
   mounted() {
     console.log("Component mounted.");
+  },
+  created() {
+    if (User.loggedIn()) {
+      this.$router.push({ name: "home" });
+    }
   },
 };
 </script>
