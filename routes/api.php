@@ -18,7 +18,6 @@ Route::post('login', 'AuthController@login');
 Route::group(['middleware' => 'api', 'jwt.verify'], function ($router) {
     Route::post('logout', 'AuthController@logout');
     Route::post('sign-up', 'AuthController@signUp');
-
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
 });
