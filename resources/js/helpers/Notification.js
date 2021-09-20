@@ -1,4 +1,4 @@
-class Notfication {
+class Notification {
     // alert, success, error, warning, info
     success(message = 'Successfully Done') {
         this.handelNoty('success', message)

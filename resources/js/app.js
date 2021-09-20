@@ -28,6 +28,7 @@ const Toast = Swal.mixin({
 window.Toast = Toast
 
 
+
 const router = new VueRouter({
     routes,
     mode: 'history'

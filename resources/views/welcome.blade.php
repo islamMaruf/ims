@@ -41,8 +41,11 @@
     </a>
     <script src="{{asset('js/app.js')}}"></script>
     <script src="{{asset('backend')}}/vendor/jquery/jquery.min.js"></script>
-    {{-- <script src="{{asset('backend')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
-    <script src="{{asset('backend')}}/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{asset('backend')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('backend')}}/vendor/select2/dist/js/select2.min.js"></script>
+    <script src="{{asset('backend')}}/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="{{asset('backend')}}/vendor/bootstrap-touchspin/js/jquery.bootstrap-touchspin.js"></script>
+    <script src="{{asset('backend')}}/vendor/clock-picker/clockpicker.js"></script>
     <script src="{{asset('backend')}}/js/ruang-admin.js"></script>
     <script src="{{asset('backend')}}/vendor/chart.js/Chart.min.js"></script>
     <script src="{{asset('backend')}}/js/demo/chart-area-demo.js"></script>

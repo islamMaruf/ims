@@ -16,19 +16,28 @@
         Features
     </div>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap" aria-expanded="true" aria-controls="collapseBootstrap">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#employeeCollapse" aria-expanded="true" aria-controls="collapseBootstrap">
             <i class="far fa-fw fa-window-maximize"></i>
-            <span>Bootstrap UI</span>
+            <span>Employee</span>
         </a>
-        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+        <div id="employeeCollapse" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Bootstrap UI</h6>
-                <a class="collapse-item" href="alerts.html">Alerts</a>
-                <a class="collapse-item" href="buttons.html">Buttons</a>
-                <a class="collapse-item" href="dropdowns.html">Dropdowns</a>
-                <a class="collapse-item" href="modals.html">Modals</a>
-                <a class="collapse-item" href="popovers.html">Popovers</a>
-                <a class="collapse-item" href="progress-bar.html">Progress Bars</a>
+                {{-- <h6 class="collapse-header">Bootstrap UI</h6> --}}
+                <router-link to="/employees" class="collapse-item">Employees</router-link>
+                <router-link to="/add-employee" class="collapse-item">Add Employee</router-link>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#supplierCollapse" aria-expanded="true" aria-controls="collapseBootstrap">
+            <i class="far fa-fw fa-window-maximize"></i>
+            <span>Supplier</span>
+        </a>
+        <div id="supplierCollapse" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                {{-- <h6 class="collapse-header">Bootstrap UI</h6> --}}
+                <router-link to="" class="collapse-item">Suppliers</router-link>
+                <router-link to="" class="collapse-item">Add Supplier</router-link>
             </div>
         </div>
     </li>

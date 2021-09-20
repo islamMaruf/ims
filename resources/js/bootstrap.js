@@ -24,6 +24,18 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+// check for the `Authorization` header in each response - refresh on frontend if found
+axios.interceptors.response.use((response) => {
+    let headers = response.headers
+    // your 401 check here
+    // token refresh - update client session
+    if (headers.authorization !== undefined) {
+        setAuthorization(headers.authorization);
+    }
+
+    return response
+})
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
